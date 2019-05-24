@@ -12,13 +12,12 @@ logging:
         root: info
         de:
             codecentric: info
-        org.springframework.cloud.consul.discovery: info
         org.springframework.security: trace # allows ldap debugging
         com.softvision.sv.spring.boot.admin.config: info
 
 
 server:
-   port: 8988
+   port: ${PORT:8988}
 
 
 spring:

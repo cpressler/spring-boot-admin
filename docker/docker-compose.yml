@@ -1,0 +1,19 @@
+version: "3.5"
+services:
+  serverapi:
+    build:
+      context: ../
+      dockerfile: ./docker/server/spring-boot-admin.Dockerfile
+      args:
+        - POM_VERSION=${POM_VERSION}
+        - ARTIFACT_ID=${ARTIFACT_ID}
+        - version=${version}
+    image: "softvisionlvcp/spring-boot-admin:latest"
+    ports:
+      - "8180:8180"
+    networks:
+      - proxynet
+
+networks:
+  proxynet:
+    name: custom_network
